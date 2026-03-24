@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phuc Werks | Designs and Photos</title>
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            --primary-bg: #fafafa;
+            --text-main: #1a1a1a;
+            --text-light: #666666;
+            --accent: #d4af37; /* Subtle gold */
+        }
+
+        /* --- GLOBAL STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            background-color: transparent;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(250, 250, 250, 0.9), rgba(250, 250, 250, 0.9)), 
+                        url('https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1920&q=80') center/cover;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border: 1px solid var(--text-main);
+            background: transparent;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--text-main);
+            color: var(--primary-bg);
+        }
+
+       /* --- GALLERY GRID --- */
+        .exhibition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 4rem 3rem; 
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5% 4rem;
+        }
+
+        /* --- ART CARD --- */
+        .art-card {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .art-card:hover {
+            transform: translateY(-5px); 
+        }
+
+        .image-wrapper {
+            width: 100%;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            background-color: #eee; 
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 400px; 
+            object-fit: cover; 
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .art-card:hover .image-wrapper img {
+            transform: scale(1.03); 
+        }
+
+        /* --- MINOR DESCRIPTIONS --- */
+        .art-label {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .art-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .art-medium {
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .art-description {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 4rem 5% 2rem;
+            background-color: var(--text-main);
+            color: white;
+            font-size: 0.85rem;
+        }
+
+        /* --- RESPONSIVE ADJUSTMENTS --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .exhibition-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .image-wrapper img {
+                height: auto;
+                aspect-ratio: 4/5;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Phucing Great Werks</div>
+        <nav>
+            <ul>
+                <li><a href="#home.html">Home</a></li>
+                <li><a href="#photo2.html">Werks</a></li>
+                <li><a href="#about2.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Where Peak Resides</h1>
+        <p>Explore a curated collection of peak designs, awesome pictures, and modern creations from yours truly.</p>
+        <a href="#photo2.html class="btn"></a>
+    </section>
+
+    <section id="photo2.html" class="gallery-section">
+<main class="exhibition-grid">
+        
+        <article class="art-card">
+            <div class="image-wrapper">
+                <img src="dustin.png" alt="Silent Echoes">
+            </div>
+            <div class="art-label">
+                <h2 class="art-title">Demure Gentle Freshman</h2>
+                <span class="art-medium">Posing Project, 2025</span>
+                <p class="art-description">A photograph of a freshman by the name of Dustin Dang.</p>
+            </div>
+        </article>
+
+        <article class="art-card">
+            <div class="image-wrapper">
+                <img src="Jacob.png" alt="The Form">
+            </div>
+            <div class="art-label">
+                <h2 class="art-title">Big, Tough, Nonchalant Freshman</h2>
+                <span class="art-medium">Pinnacle of Human Posing, 2025</span>
+                <p class="art-description">A picture of man just below the light of gods. Not just an image but a revelation.</p>
+            </div>
+        </article>
+
+        <article class="art-card">
+            <div class="image-wrapper">
+                <img src="bossman.png" alt="Urban Flow">
+            </div>
+            <div class="art-label">
+                <h2 class="art-title">The Big Boss</h2>
+                <span class="art-medium">Low Cortisol High Bucks, 2025</span>
+                <p class="art-description">A rich, high elite man relaxing against a fence as he owns eeverything</p>
+            </div>
+        </article>
+
+        <article class="art-card">
+            <div class="image-wrapper">
+                <img src="julian.png" alt="Midnight Chaos">
+            </div>
+            <div class="art-label">
+                <h2 class="art-title">Julian</h2>
+                <span class="art-medium">The Thinker, 2026</span>
+                <p class="art-description">A man thinking about how he's going to get mog or be mogged as he is him.</p>
+            </div>
+        </article>
+
+        <article class="art-card">
+            <div class="image-wrapper">
+                <img src="worker.png" alt="Golden Hour">
+            </div>
+            <div class="art-label">
+                <h2 class="art-title">Master Got Me Workin'</h2>
+                <span class="art-medium">Posing Photos, 2025</span>
+                <p class="art-description">The sole photo of the boss before he made it rich by blind look.</p>
+            </div>
+        </article>
+
+        <article class="art-card">
+            <div class="image-wrapper">
+                <img src="AAAA.png" alt="Structural Integrity">
+            </div>
+            <div class="art-label">
+                <h2 class="art-title">AAAA CATCH ME MY GLORIOUS KING!!!</h2>
+                <span class="art-medium">Movement Photos, 2025</span>
+                <p class="art-description">A submissive boy being held up by his alpha to not fall.</p>
+            </div>
+        </article>
+
+        <article class="art-card">
+            <div class="image-wrapper">
+                <img src="chair.png" alt="Erosion">
+            </div>
+            <div class="art-label">
+                <h2 class="art-title">Trash</h2>
+                <span class="art-medium">Stuff, 2025</span>
+                <p class="art-description">One's trash is another's treasure!</p>
+            </div>
+        </article>
+
+        <article class="art-card">
+            <div class="image-wrapper">
+                <img src="rocks.png" alt="The Observer">
+            </div>
+            <div class="art-label">
+                <h2 class="art-title">The Tiny but Overwhelming Rocks</h2>
+                <span class="art-medium">Stuff, 2025</span>
+                <p class="art-description">Several rocks to sit on out in the wild.</p>
+            </div>
+        </article>
+
+        <article class="art-card">
+            <div class="image-wrapper">
+                <img src="mono.png" alt="Geometric Spring">
+            </div>
+            <div class="art-label">
+                <h2 class="art-title">Mouse in 1967</h2>
+                <span class="art-medium">Stuff, 2025</span>
+                <p class="art-description">A mouse from a long long time ago when colour didn't exist.</p>
+            </div>
+        </article>
+          </article>
+
+        <article class="art-card">
+            <div class="image-wrapper">
+                <img src="worker.png" alt="Golden Hour">
+            </div>
+            <div class="art-label">
+                <h2 class="art-title">Could Lick That Rust~</h2>
+                <span class="art-medium">Stuff, 2025</span>
+                <p class="art-description">A photo of rust in on some type of metal thing.</p>
+            </div>
+        </article>
+
+               </section>
+<img src="art.png" alt="Placeholder Image 1 - 1000x400">
+<img src="moon.png" alt="Placeholder Image 2 - 1000x400">
+<img src="collage.png" alt="Placeholder Image 3 - 1200x400">
+
+<img src="surgery.png" alt="Placeholder Image 4 - 1000x400">
+<img src="art2.png" alt="Placeholder Image 5 - 1100x400">
+<img src="wife.png" alt="Placeholder Image 6 - 1200x400">
+<img src="tree.png" alt="Placeholder Image 7 - 1000x400">
+
+<img src="thug.png" alt="Placeholder Image 8 - 1100x400">
+<img src="night.png" alt="Placeholder Image 9 - 1000x400">
+<img src="ss.png" alt="Placeholder Image 10 - 800x400">
+    <footer id="contact">
+        <p>&copy; 2026 Phuc Nguyen Media Werks. Everything used is MINE</p>
+    </footer>
+
+</body>
+</html>
